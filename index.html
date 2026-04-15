@@ -23,19 +23,22 @@ body {
 
 h1 {
     color: #005daa;
-    margin: 10px 0;
 }
 
 h2 {
     color: #005daa;
-    border-bottom: 2px solid #005daa;
-    padding-bottom: 5px;
+    cursor: pointer;
     margin-top: 30px;
 }
 
 h3 {
     margin-top: 20px;
     color: #333;
+}
+
+.year-content {
+    display: none;
+    margin-left: 10px;
 }
 
 .post {
@@ -46,18 +49,10 @@ h3 {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.latest {
-    border-left: 5px solid #f7a81b;
-}
-
 a {
     text-decoration: none;
     color: #005daa;
     font-weight: bold;
-}
-
-a:hover {
-    text-decoration: underline;
 }
 
 .date {
@@ -69,8 +64,6 @@ a:hover {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
 }
 </style>
 </head>
@@ -78,36 +71,17 @@ a:hover {
 
 <div class="header">
     <img src="rotary-logo.png" alt="Rotary Logo">
-    <h1>Rotary Club Blog Archive</h1>
+    <h1>Ayr Rotary Blog Archive</h1>
 </div>
 
 <input type="text" id="searchBox" onkeyup="searchPosts()" placeholder="Search posts...">
-<h2>Latest Posts</h2>
-    <div class="post latest">
-        <a href="Blogs2026/2026-04-04-incredible-2025-poppy-appeal-results.html" target="_blank">Incredible 2025 Poppy Appeal Results</a><br>
-        <span class="date">04 Apr 2026</span>
-    </div>
-    
-    <div class="post latest">
-        <a href="Blogs2026/2026-04-01-500-years-of-roaring.html" target="_blank">500 Years Of Roaring</a><br>
-        <span class="date">01 Apr 2026</span>
-    </div>
-    
-    <div class="post latest">
-        <a href="Blogs2026/2026-03-23-police-scotland-visit-to-stewarton-equine-centre-and-govan-traffic.html" target="_blank">Police Scotland Visit To Stewarton Equine Centre And Govan Traffic</a><br>
-        <span class="date">23 Mar 2026</span>
-    </div>
-    
-    <div class="post latest">
-        <a href="Blogs2026/2026-03-21-derek-alexander-on-culzean-castle.html" target="_blank">Derek Alexander On Culzean Castle</a><br>
-        <span class="date">21 Mar 2026</span>
-    </div>
-    
-    <div class="post latest">
-        <a href="Blogs2026/2026-03-21-aquabox-at-annbank-primary-school.html" target="_blank">Aquabox At Annbank Primary School</a><br>
-        <span class="date">21 Mar 2026</span>
-    </div>
-    <h2>2026</h2><h3>April 2026</h3>
+<p style="color:#666; font-size:1.5em; margin-top:-10px; margin-bottom:20px;">
+Expand the years by clicking or use the search box above for a particular word
+</p>
+
+    <h2 onclick="toggleYear('2026', this)">▶ 2026</h2>
+    <div id="year-2026" class="year-content">
+    <h3>April 2026</h3>
             <div class="post">
                 <a href="Blogs2026/2026-04-04-incredible-2025-poppy-appeal-results.html" target="_blank">Incredible 2025 Poppy Appeal Results</a><br>
                 <span class="date">04 Apr 2026</span>
@@ -167,7 +141,10 @@ a:hover {
                 <a href="Blogs2026/2026-02-01-a-brilliant-burns-night-because….-.html" target="_blank">A Brilliant Burns Night Because….</a><br>
                 <span class="date">01 Feb 2026</span>
             </div>
-            <h2>2025</h2><h3>December 2025</h3>
+            </div>
+    <h2 onclick="toggleYear('2025', this)">▶ 2025</h2>
+    <div id="year-2025" class="year-content">
+    <h3>December 2025</h3>
             <div class="post">
                 <a href="Blogs2025/2025-12-24-john-dunlop’s-legacy-–-ayr-rotary.html" target="_blank">John Dunlop’s Legacy</a><br>
                 <span class="date">24 Dec 2025</span>
@@ -252,20 +229,51 @@ a:hover {
                 <a href="Blogs2025/2025-10-01-women-of-ayrshire-who-should-never-be-forgotten-–.html" target="_blank">Women Of Ayrshire Who Should Never Be Forgotten</a><br>
                 <span class="date">01 Oct 2025</span>
             </div>
-            <h2>2024</h2><h3>December 2024</h3>
+            </div>
+    <h2 onclick="toggleYear('2024', this)">▶ 2024</h2>
+    <div id="year-2024" class="year-content">
+    <h3>December 2024</h3>
             <div class="post">
                 <a href="Blogs2024/2024-12-20-willie-stewart’s-christnas-quiz-–.html" target="_blank">Willie Stewart’s Christnas Quiz</a><br>
                 <span class="date">20 Dec 2024</span>
             </div>
-            
+            </div>
 <script>
+function toggleYear(year, el) {
+    let content = document.getElementById("year-" + year);
+
+    if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+        el.innerHTML = "▼ " + year;
+    } else {
+        content.style.display = "none";
+        el.innerHTML = "▶ " + year;
+    }
+}
+
 function searchPosts() {
     let input = document.getElementById("searchBox").value.toLowerCase();
     let posts = document.getElementsByClassName("post");
 
     for (let i = 0; i < posts.length; i++) {
         let text = posts[i].innerText.toLowerCase();
-        posts[i].style.display = text.includes(input) ? "" : "none";
+
+        if (text.includes(input)) {
+            posts[i].style.display = "";
+
+            // 🔥 AUTO-EXPAND YEAR WHEN MATCH FOUND
+            let parent = posts[i].closest(".year-content");
+            if (parent) {
+                parent.style.display = "block";
+
+                let year = parent.id.replace("year-", "");
+                let header = document.querySelector(`h2[onclick*="${year}"]`);
+                if (header) header.innerHTML = "▼ " + year;
+            }
+
+        } else {
+            posts[i].style.display = "none";
+        }
     }
 }
 </script>
