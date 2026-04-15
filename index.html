@@ -1,30 +1,212 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Rotary Blog Archive</title>
-    <meta charset="UTF-8">
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; }
-        h1 { color: #333; }
-        a { text-decoration: none; color: #0066cc; }
-        a:hover { text-decoration: underline; }
-    </style>
+<meta charset="UTF-8">
+<title>Rotary Blog Archive</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: auto;
+    background: #f5f7fa;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header img {
+    max-width: 120px;
+}
+
+h1 {
+    color: #005daa;
+    margin: 10px 0;
+}
+
+h2 {
+    color: #005daa;
+    border-bottom: 2px solid #005daa;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+h3 {
+    margin-top: 20px;
+    color: #333;
+}
+
+.post {
+    background: white;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.latest {
+    border-left: 5px solid #f7a81b;
+}
+
+a {
+    text-decoration: none;
+    color: #005daa;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.date {
+    color: #666;
+    font-size: 0.9em;
+}
+
+#searchBox {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+</style>
 </head>
 <body>
-    <h1>Rotary Blog Archive</h1>
 
-    <h2>2026</h2>
-    <ul>
-        <li><a href="Blogs 2026/01-02-2026 A Brilliant Burns Night because…. .html">01-02-2026 A Brilliant Burns Night because….</a></li>
-        <li><a href="Blogs 2026/01-04-2026 500 Years of Roaring.html">01-04-2026 500 Years of Roaring</a></li>
-        <li><a href="Blogs 2026/04-04-2026 Incredible 2025 Poppy Appeal Results.html">04-04-2026 Incredible 2025 Poppy Appeal Results</a></li>
-        <li><a href="Blogs 2026/05-03-2026 Fraser Maitland, “Inspiring Young Entrepreneurs.html">05-03-2026 Fraser Maitland, “Inspiring Young Entrepreneurs</a></li>
-        <li><a href="Blogs 2026/08-02-2026 District Governor Brenda Waugh visits Ayr.html">08-02-2026 District Governor Brenda Waugh visits Ayr</a></li>
-        <li><a href="Blogs 2026/20-03-2026 Annual Rotary Bonspiel in Perth.html">20-03-2026 Annual Rotary Bonspiel in Perth</a></li>
-        <li><a href="Blogs 2026/21-03-2026 Aquabox at Annbank Primary School.html">21-03-2026 Aquabox at Annbank Primary School</a></li>
-        <li><a href="Blogs 2026/21-03-2026 Derek Alexander on Culzean Castle.html">21-03-2026 Derek Alexander on Culzean Castle</a></li>
-        <li><a href="Blogs 2026/23-02-2026 Waste Management by Alasdair Meldrum.html">23-02-2026 Waste Management by Alasdair Meldrum</a></li>
-        <li><a href="Blogs 2026/23-03-2026 Police Scotland visit to Stewarton Equine Centre and Govan Traffic.html">23-03-2026 Police Scotland visit to Stewarton Equine Centre and Govan Traffic</a></li>
-    </ul>
-</body>
-</html>
+<div class="header">
+    <img src="rotary-logo.png" alt="Rotary Logo">
+    <h1>Rotary Club Blog Archive</h1>
+</div>
+
+<input type="text" id="searchBox" onkeyup="searchPosts()" placeholder="Search posts...">
+<h2>Latest Posts</h2>
+    <div class="post latest">
+        <a href="Blogs2026/2026-04-04-incredible-2025-poppy-appeal-results.html" target="_blank">Incredible 2025 Poppy Appeal Results</a><br>
+        <span class="date">04 Apr 2026</span>
+    </div>
+    
+    <div class="post latest">
+        <a href="Blogs2026/2026-04-01-500-years-of-roaring.html" target="_blank">500 Years Of Roaring</a><br>
+        <span class="date">01 Apr 2026</span>
+    </div>
+    
+    <div class="post latest">
+        <a href="Blogs2026/2026-03-23-police-scotland-visit-to-stewarton-equine-centre-and-govan-traffic.html" target="_blank">Police Scotland Visit To Stewarton Equine Centre And Govan Traffic</a><br>
+        <span class="date">23 Mar 2026</span>
+    </div>
+    
+    <div class="post latest">
+        <a href="Blogs2026/2026-03-21-derek-alexander-on-culzean-castle.html" target="_blank">Derek Alexander On Culzean Castle</a><br>
+        <span class="date">21 Mar 2026</span>
+    </div>
+    
+    <div class="post latest">
+        <a href="Blogs2026/2026-03-21-aquabox-at-annbank-primary-school.html" target="_blank">Aquabox At Annbank Primary School</a><br>
+        <span class="date">21 Mar 2026</span>
+    </div>
+    <h2>2026</h2><h3>April 2026</h3>
+            <div class="post">
+                <a href="Blogs2026/2026-04-04-incredible-2025-poppy-appeal-results.html" target="_blank">Incredible 2025 Poppy Appeal Results</a><br>
+                <span class="date">04 Apr 2026</span>
+            </div>
+            
+            <div class="post">
+                <a href="Blogs2026/2026-04-01-500-years-of-roaring.html" target="_blank">500 Years Of Roaring</a><br>
+                <span class="date">01 Apr 2026</span>
+            </div>
+            <h3>March 2026</h3>
+            <div class="post">
+                <a href="Blogs2026/2026-03-23-police-scotland-visit-to-stewarton-equine-centre-and-govan-traffic.html" target="_blank">Police Scotland Visit To Stewarton Equine Centre And Govan Traffic</a><br>
+                <span class="date">23 Mar 2026</span>
+            </div>
+            
+            <div class="post">
+                <a href="Blogs2026/2026-03-21-derek-alexander-on-culzean-castle.html" target="_blank">Derek Alexander On Culzean Castle</a><br>
+                <span class="date">21 Mar 2026</span>
+            </div>
+            
+            <div class="post">
+                <a href="Blogs2026/2026-03-21-aquabox-at-annbank-primary-school.html" target="_blank">Aquabox At Annbank Primary School</a><br>
+                <span class="date">21 Mar 2026</span>
+            </div>
+            
+            <div class="post">
+                <a href="Blogs2026/2026-03-20-annual-rotary-bonspiel-in-perth.html" target="_blank">Annual Rotary Bonspiel In Perth</a><br>
+                <span class="date">20 Mar 2026</span>
+            </div>
+            
+            <div class="post">
+                <a href="Blogs2026/2026-03-05-fraser-maitland,-“inspiring-young-entrepreneurs.html" target="_blank">Fraser Maitland, “inspiring Young Entrepreneurs</a><br>
+                <span class="date">05 Mar 2026</span>
+            </div>
+            <h3>February 2026</h3>
+            <div class="post">
+                <a href="Blogs2026/2026-02-23-waste-management-by-alasdair-meldrum.html" target="_blank">Waste Management By Alasdair Meldrum</a><br>
+                <span class="date">23 Feb 2026</span>
+            </div>
+            
+            <div class="post">
+                <a href="Blogs2026/2026-02-20-annual-rotary-bonspiel-in-perth-–-ayr-rotary.html" target="_blank">Annual Rotary Bonspiel In Perth</a><br>
+                <span class="date">20 Feb 2026</span>
+            </div>
+            
+            <div class="post">
+                <a href="Blogs2026/2026-02-08-district-governor-brenda-waugh-visits-ayr.html" target="_blank">District Governor Brenda Waugh Visits Ayr</a><br>
+                <span class="date">08 Feb 2026</span>
+            </div>
+            
+            <div class="post">
+                <a href="Blogs2026/2026-02-08-district-governor-brenda-waugh-visits-ayr-–-ayr-rotary.html" target="_blank">District Governor Brenda Waugh Visits Ayr</a><br>
+                <span class="date">08 Feb 2026</span>
+            </div>
+            
+            <div class="post">
+                <a href="Blogs2026/2026-02-01-a-brilliant-burns-night-because….-.html" target="_blank">A Brilliant Burns Night Because….</a><br>
+                <span class="date">01 Feb 2026</span>
+            </div>
+            <h2>2025</h2><h3>December 2025</h3>
+            <div class="post">
+                <a href="Blogs2025/2025-12-24-john-dunlop’s-legacy-–-ayr-rotary.html" target="_blank">John Dunlop’s Legacy</a><br>
+                <span class="date">24 Dec 2025</span>
+            </div>
+            
+            <div class="post">
+                <a href="Blogs2025/2025-12-15-huge-tree-of-remembrance-donation-–-ayr-rotary.html" target="_blank">Huge Tree Of Remembrance Donation</a><br>
+                <span class="date">15 Dec 2025</span>
+            </div>
+            
+            <div class="post">
+                <a href="Blogs2025/2025-12-02-ayr-high-street-tree-of-remembrance-–-ayr-rotary.html" target="_blank">Ayr High Street Tree Of Remembrance</a><br>
+                <span class="date">02 Dec 2025</span>
+            </div>
+            <h3>November 2025</h3>
+            <div class="post">
+                <a href="Blogs2025/2025-11-27-youth-speaks-competition-2025-–-ayr-rotary.html" target="_blank">Youth Speaks Competition 2025</a><br>
+                <span class="date">27 Nov 2025</span>
+            </div>
+            
+            <div class="post">
+                <a href="Blogs2025/2025-11-26-the-history-and-symbolism-of-national-flags-–.html" target="_blank">The History And Symbolism Of National Flags</a><br>
+                <span class="date">26 Nov 2025</span>
+            </div>
+            <h2>2024</h2><h3>December 2024</h3>
+            <div class="post">
+                <a href="Blogs2024/2024-12-20-willie-stewart’s-christnas-quiz-–.html" target="_blank">Willie Stewart’s Christnas Quiz</a><br>
+                <span class="date">20 Dec 2024</span>
+            </div>
+            
+<script>
+function searchPosts() {
+    let input = document.getElementById("searchBox").value.toLowerCase();
+    let posts = document.getElementsByClassName("post");
+
+    for (let i = 0; i < posts.length; i++) {
+        let text = posts[i].innerText.toLowerCase();
+        posts[i].style.display = text.includes(input) ? "" : "none";
+    }
+}
+</script>
+</body></html>
